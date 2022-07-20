@@ -1,0 +1,85 @@
+// Импорт
+@import '_normalize';
+@import '_fonts'; // Шрифты
+@import '../../node_modules/swiper/swiper-bundle.css';
+//====
+
+// Переменные
+$fz: 14px;
+
+$maincolor: #1b1c21;
+$textcolor: #7e7e82;
+$bgcolor: #f8f8f8;
+$accent: #ff3e79;
+$accent2: #41f6d7;
+//====
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Body
+body {
+  font-family: 'TT Lakes', sans-serif;
+  font-size: $fz;
+  color: $maincolor;
+
+  background-color: $bgcolor;
+}
+
+body.lock {
+  overflow: hidden;
+}
+//====
+
+.main {
+  padding-top: 100px;
+}
+
+.container {
+  padding: 0 16px;
+
+  &--fullwidth {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .wrapper {
+    display: flex;
+  }
+  .main {
+    padding-top: 0;
+  }
+  .container {
+    min-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+@import '_menu';
+
+@import '_header';
+
+@import '_services';
+
+@import '_gallery';
+
+@import '_swiper';
+
+@import '_pricelist';
+
+@import '_footer';
+
+@import '_modals';

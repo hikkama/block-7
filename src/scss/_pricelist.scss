@@ -1,0 +1,46 @@
+.pricelist {
+  margin: 24px 0 40px;
+  &__title {
+    margin: 0 0 16px;
+    padding: 15px 24px;
+  }
+  &__offer {
+    padding: 0 16px;
+  }
+  &__text {
+    margin: 0;
+    line-height: 20px;
+  }
+  &__btn {
+    display: block;
+    margin-top: 20px;
+
+    font-size: $fz + 2;
+    line-height: 24px;
+    font-weight: 500;
+
+    cursor: pointer;
+  }
+  &__btn:hover,
+  &__btn:focus {
+    text-decoration: underline;
+  }
+  &__btn:visited {
+    color: inherit;
+  }
+  &__btn span {
+    margin-left: 12px;
+    background: url(../img/pricelist/line.svg) center right no-repeat;
+    width: 7px;
+    height: 10px;
+    display: inline-block;
+  }
+}
+
+@media (min-width: 768px) {
+  .pricelist {
+    &__text {
+      max-width: 421px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.footer {
+  border-top: 1px solid #d9fff5;
+  padding: 16px 0 16px;
+  &__inner {
+    color: $textcolor;
+    text-align: center;
+  }
+
+  &__copy {
+    margin-bottom: 16px;
+  }
+
+  &__policy {
+    display: block;
+    color: inherit;
+    margin-bottom: 16px;
+  }
+  &__policy:hover,
+  &__policy:focus {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      flex: 1 1 33%;
+    }
+    &__copy {
+      flex-basis: 33.3333%;
+      text-align: left;
+      margin-bottom: 0;
+    }
+    &__policy {
+      margin-bottom: 0;
+      flex-basis: 33.3333%;
+    }
+
+    &__notoferta {
+      flex-basis: 33.3333%;
+      text-align: right;
+    }
+  }
+}

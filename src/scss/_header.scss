@@ -1,0 +1,147 @@
+// Header
+.header {
+  width: 100%;
+
+  background-color: #fff;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 88px;
+  }
+  &__column {
+    display: flex;
+    align-items: center;
+  }
+  &__menu-btn {
+    width: 40px;
+    height: 40px;
+
+    margin-right: 16px;
+    padding: 11px;
+
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $accent;
+
+    transition: opacity 0.2s linear;
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+  }
+  &__menu-line {
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    background-color: #fff;
+    border-radius: 1px;
+
+    position: relative;
+    &::before {
+      content: '';
+      width: 18px;
+      height: 2px;
+
+      background-color: #fff;
+      border-radius: 1px;
+
+      position: absolute;
+      top: -5px;
+      left: 0;
+    }
+    &::after {
+      content: '';
+      width: 12px;
+      height: 2px;
+
+      background-color: #fff;
+      border-radius: 1px;
+
+      position: absolute;
+      top: 5px;
+      left: 0;
+    }
+  }
+  &__link {
+    margin-right: 16px;
+  }
+}
+
+.link-icon {
+  color: inherit;
+  position: relative;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.link-icon--repair::after,
+.link-icon--status::after {
+  display: inline-block;
+  content: '';
+  width: 40px;
+  height: 40px;
+
+  vertical-align: middle;
+}
+
+.link-icon--repair::after {
+  background-image: url(../img/header/repair.svg);
+}
+
+.link-icon--status::after {
+  background-image: url(../img/header/checkstatus.svg);
+}
+
+.logo {
+  position: relative;
+  &::after {
+    content: '';
+    width: 2px;
+    height: 32px;
+
+    background-color: #eaeaea;
+
+    position: absolute;
+    top: 50%;
+    right: -16px;
+
+    transform: translateY(-50%);
+  }
+}
+
+//====
+
+@media (min-width: 768px) {
+  .header {
+    &__menu-btn {
+      margin-right: 42px;
+    }
+  }
+  .logo::after {
+    left: -21px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .header {
+    display: none;
+  }
+
+  .link-icon--repair::after {
+    margin-left: 13px;
+  }
+
+  .link-icon--status::after {
+    margin-left: 13px;
+  }
+}

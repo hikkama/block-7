@@ -1,0 +1,293 @@
+.main-menu {
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.96);
+
+  font-weight: 500;
+  font-size: $fz + 2;
+
+  transition: all 0.3s linear;
+
+  &__wrapper {
+    width: 100%;
+    padding: 0 16px;
+
+    position: absolute;
+    left: -100%;
+    transition: left 0.3s linear;
+
+    background-color: #fff;
+    box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
+      16px 0px 52px rgba(14, 24, 80, 0.2);
+  }
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.open &__wrapper {
+    left: 0;
+  }
+  &__header-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    flex-grow: 1;
+  }
+
+  &__header {
+    margin-bottom: 24px;
+    padding-top: 16px;
+  }
+
+  &__nav {
+    margin-bottom: 32px;
+  }
+
+  &__footer {
+    padding-bottom: 32px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    margin-bottom: 24px;
+  }
+
+  &__list-item:last-child {
+    margin-bottom: 0;
+  }
+
+  &__list-item--active {
+    color: #7e7e82;
+    position: relative;
+  }
+  &__list-item--active::before {
+    content: '';
+    width: 4px;
+    height: 40px;
+
+    background-color: #41f6d7;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    position: absolute;
+    top: -50%;
+    left: -16px;
+  }
+
+  &__list-item a {
+    color: inherit;
+
+    transition: color 0.2s linear;
+  }
+
+  &__list-item a:hover,
+  &__list-item a:focus {
+    color: #7e7e82;
+  }
+
+  &__footer-icons {
+    display: flex;
+    column-gap: 16px;
+
+    margin-bottom: 16px;
+  }
+
+  &__footer-email {
+    display: block;
+    margin-bottom: 12px;
+
+    color: inherit;
+  }
+
+  &__footer-email:hover,
+  &__footer-email:focus {
+    text-decoration: underline;
+  }
+
+  &__footer-tel {
+    display: block;
+    margin-bottom: 8px;
+
+    color: inherit;
+    font-weight: 700;
+    font-size: 24px;
+
+    transition: color 0.2s linear;
+  }
+
+  &__footer-tel:hover,
+  &__footer-tel:focus {
+    color: #7e7e82;
+  }
+}
+
+.btn-close {
+  width: 40px;
+  height: 40px;
+
+  margin-right: 16px;
+  padding: 11px;
+
+  border-radius: 50%;
+  background-color: $accent;
+  cursor: pointer;
+
+  transition: opacity 0.2s linear;
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+  &__line {
+    display: block;
+    width: 22px;
+    height: 2px;
+
+    background-color: none;
+    border-radius: 1px;
+
+    position: relative;
+  }
+  &__line::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+
+    background-color: #fff;
+    border-radius: 1px;
+
+    position: absolute;
+    top: -5px;
+    left: 0;
+
+    transform: rotate(45deg) translate(2px, 5px);
+  }
+  &__line::after {
+    content: '';
+    width: 22px;
+    height: 2px;
+
+    background-color: #fff;
+    border-radius: 1px;
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transform: rotate(-45deg) translate(2px, -5px);
+  }
+}
+.link-icon {
+  position: relative;
+  transition: opacity 0.2s linear;
+
+  &--search,
+  &--message,
+  &--phone,
+  &--profile {
+    content: '';
+    width: 40px;
+    height: 40px;
+  }
+  &--search {
+    background-image: url(../img/menu/search.svg);
+  }
+  &--phone {
+    background-image: url(../img/menu/phone.svg);
+  }
+  &--message {
+    background-image: url(../img/menu/chat.svg);
+  }
+  &--profile {
+    background-image: url(../img/menu/profile.svg);
+  }
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  opacity: 0.8;
+}
+
+.language-switcher {
+  &__item {
+    cursor: pointer;
+    margin-right: 7px;
+    padding: 0;
+
+    background-color: inherit;
+
+    transition: color 0.2s linear;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+  &__item:hover,
+  &__item:focus {
+    color: #7e7e82;
+  }
+
+  &__item--active {
+    color: #7e7e82;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-menu {
+    .logo {
+      &::after {
+        width: 0;
+      }
+    }
+    &__wrapper {
+      width: 320px;
+    }
+    &__header {
+      margin-bottom: 50px;
+    }
+    &__list {
+      margin-bottom: 270px;
+    }
+    &__list-item {
+      margin-bottom: 40px;
+    }
+    &__footer-tel {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .main-menu {
+    display: block;
+    width: auto;
+    position: static;
+
+    background-color: #fff;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+    &__wrapper {
+      position: static;
+      box-shadow: none;
+    }
+    &__btn {
+      display: none;
+    }
+  }
+}
