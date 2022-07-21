@@ -3,13 +3,22 @@
 const textServices = document.querySelector('.services__text')
 const heightOfTextServices = textServices.scrollHeight
 const btnServices = document.querySelector('.services__btn-more')
+const btnServicesClose = document.querySelector('.services__btn-less')
 
 textServices.style.maxHeight = `${textServices.children[0].offsetHeight}px`
 
 btnServices.addEventListener('click', function () {
   textServices.style.maxHeight = `${heightOfTextServices}px`
   textServices.style.marginBottom = '0'
-  btnServices.disabled = true
+  btnServices.style.display = 'none'
+  btnServicesClose.style.display = 'block'
+})
+
+btnServicesClose.addEventListener('click', function () {
+  textServices.style.maxHeight = `${textServices.children[0].offsetHeight}px`
+  textServices.style.marginBottom = '30px'
+  btnServicesClose.style.display = 'none'
+  btnServices.style.display = 'block'
 })
 
 //  Button 'показать все' gallery brands

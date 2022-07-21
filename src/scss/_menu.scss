@@ -203,18 +203,22 @@
     content: '';
     width: 40px;
     height: 40px;
+    background-color: $accent;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
   &--search {
-    background-image: url(../img/menu/search.svg);
+    background-image: url(../img/icons/search.svg);
   }
   &--phone {
-    background-image: url(../img/menu/phone.svg);
+    background-image: url(../img/icons/phone.svg);
   }
   &--message {
-    background-image: url(../img/menu/chat.svg);
+    background-image: url(../img/icons/chat.svg);
   }
   &--profile {
-    background-image: url(../img/menu/profile.svg);
+    background-image: url(../img/icons/profile.svg);
   }
 }
 

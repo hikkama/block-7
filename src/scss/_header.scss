@@ -92,14 +92,18 @@
   height: 40px;
 
   vertical-align: middle;
+  background-color: $accent;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .link-icon--repair::after {
-  background-image: url(../img/header/repair.svg);
+  background-image: url(../img/icons/repair.svg);
 }
 
 .link-icon--status::after {
-  background-image: url(../img/header/checkstatus.svg);
+  background-image: url(../img/icons/checkstatus.svg);
 }
 
 .logo {

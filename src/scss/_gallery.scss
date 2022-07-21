@@ -56,8 +56,9 @@
     width: 40px;
     height: 40px;
 
-    background: url(../img/gallery/go.svg);
+    background: url(../img/icons/arrow.svg) center center no-repeat;
     border-radius: 50%;
+    border: 2px solid $accent;
     cursor: pointer;
 
     transition: background-color 0.2s linear, scale 0.2s linear;
@@ -132,6 +133,11 @@
 .btn-less:focus {
   text-decoration: underline;
 }
+
+.btn-less::before {
+  content: url('../img/services/expand.svg');
+}
+
 .btn-more::before {
   content: url('../img/services/services-more.svg');
 }
@@ -209,9 +215,6 @@
 
   .btn-less {
     display: none;
-    &::before {
-      content: url('../img/services/expand.svg');
-    }
   }
 }
 
