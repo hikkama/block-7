@@ -1159,7 +1159,11 @@ body.lock {
   .link-icon--search, .link-icon--message, .link-icon--phone, .link-icon--profile {
     content: '';
     width: 40px;
-    height: 40px; }
+    height: 40px;
+    background-color: #ff3e79;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center; }
   .link-icon--search {
     background-image: url(./static/search.svg); }
   .link-icon--phone {
@@ -1284,7 +1288,11 @@ body.lock {
   content: '';
   width: 40px;
   height: 40px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  background-color: #ff3e79;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .link-icon--repair::after {
   background-image: url(./static/repair.svg); }
@@ -1334,8 +1342,6 @@ body.lock {
     transition: max-height 0.2s linear; }
   .services .services__btn-more {
     display: block; }
-  .services__btn-more:disabled {
-    color: #d6d6d6; }
   .services__img img {
     max-width: 100%;
     height: auto; }
@@ -1473,8 +1479,9 @@ body.lock {
     justify-self: end;
     width: 40px;
     height: 40px;
-    background: url(./static/go.svg);
+    background: url(./static/arrow.svg) center center no-repeat;
     border-radius: 50%;
+    border: 2px solid #ff3e79;
     cursor: pointer;
     transition: background-color 0.2s linear, scale 0.2s linear; }
   .box-link__btn:hover, .box-link__btn:focus {
@@ -1527,6 +1534,9 @@ body.lock {
 .btn-less:focus {
   text-decoration: underline; }
 
+.btn-less::before {
+  content: url(./static/expand.svg); }
+
 .btn-more::before {
   content: url(./static/services-more.svg); }
 
@@ -1577,9 +1587,7 @@ body.lock {
   .btn-less {
     display: block; }
   .btn-less {
-    display: none; }
-    .btn-less::before {
-      content: url(./static/expand.svg); } }
+    display: none; } }
 
 @media (min-width: 1366px) {
   .gallery {
@@ -1702,9 +1710,10 @@ body.lock {
   .pricelist__text {
     margin: 0;
     line-height: 20px; }
+  .pricelist__btn-wrapper {
+    margin-top: 20px; }
   .pricelist__btn {
     display: block;
-    margin-top: 20px;
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
